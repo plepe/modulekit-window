@@ -1,4 +1,5 @@
 const EventEmitter = require('events')
+import modulekitLang from 'modulekit-lang'
 
 module.exports = class Window extends EventEmitter {
   constructor (options) {
@@ -15,7 +16,7 @@ module.exports = class Window extends EventEmitter {
 
     this.closeBtn = document.createElement('div')
     this.closeBtn.className = 'closeBtn'
-    this.closeBtn.title = lang('close')
+    this.closeBtn.title = modulekitLang.lang('close')
     this.closeBtn.onclick = (e) => {
       this.close()
       e.stopImmediatePropagation()
