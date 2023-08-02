@@ -4,6 +4,7 @@
   "description": "Module for simple window management",
   "main": "src/Window.js",
   "scripts": {
+    "lint": "standard --fix src/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/plepe/modulekit-window/issues"
   },
-  "homepage": "https://github.com/plepe/modulekit-window#readme"
+  "homepage": "https://github.com/plepe/modulekit-window#readme",
+  "devDependencies": {
+    "standard": "^17.1.0"
+  }
 }
