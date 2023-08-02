@@ -1,0 +1,19 @@
+{
+  "name": "modulekit-window",
+  "version": "0.0.0",
+  "description": "Module for simple window management",
+  "main": "src/Window.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plepe/modulekit-window.git"
+  },
+  "author": "Stephan Bösch-Plepelits <skunk@xover.mud.at>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/plepe/modulekit-window/issues"
+  },
+  "homepage": "https://github.com/plepe/modulekit-window#readme"
+}
