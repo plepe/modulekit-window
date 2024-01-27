@@ -1,6 +1,8 @@
 const EventEmitter = require('events')
 import modulekitLang from 'modulekit-lang'
 
+let windowRoot
+
 module.exports = class Window extends EventEmitter {
   constructor (options) {
     super()
@@ -34,8 +36,8 @@ module.exports = class Window extends EventEmitter {
 
       const activeEl = document.activeElement
 
-      if (document.body.lastElementChild !== this.dom) {
-        document.body.appendChild(this.dom)
+      if (windowRoot.lastElementChild !== this.dom) {
+        windowRoot.appendChild(this.dom)
         activeEl.focus()
       }
     }
@@ -43,13 +45,20 @@ module.exports = class Window extends EventEmitter {
 
   show () {
     this.visible = true
-    document.body.appendChild(this.dom)
+
+    if (!windowRoot) {
+      windowRoot = document.createElement('div')
+      windowRoot.id = 'WindowRoot'
+      document.body.appendChild(windowRoot)
+    }
+
+    windowRoot.appendChild(this.dom)
     this.emit('show')
   }
 
   close () {
     this.visible = false
-    document.body.removeChild(this.dom)
+    windowRoot.removeChild(this.dom)
     this.emit('close')
   }
 }
