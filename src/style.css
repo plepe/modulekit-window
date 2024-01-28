@@ -5,6 +5,7 @@
   right: 0;
   bottom: 0;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .Window > .content textarea {
@@ -38,6 +39,7 @@
   display: flex;
   flex-direction: column;
   align-content: stretch;
+  pointer-events: all;
 }
 .Window > .header {
   padding: 0.25em;
