@@ -5,9 +5,10 @@
   "main": "src/Window.js",
   "scripts": {
     "build": "browserify -p esmify src/demo.js -o dist/demo.js",
+    "build-css": "cp src/style.css dist/style.css",
     "build-translations": "modulekit-lang-build-dist",
     "watch": "watchify --debug -p esmify src/demo.js -o dist/demo.js -v",
-    "prepare": "npm run build && npm run build-translations",
+    "prepare": "npm run build && npm run build-translations && npm run build-css",
     "lint": "standard --fix src/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
